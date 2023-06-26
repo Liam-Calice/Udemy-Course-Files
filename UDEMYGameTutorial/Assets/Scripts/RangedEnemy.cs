@@ -26,16 +26,12 @@ public class RangedEnemy : Enemy {
             if (Vector2.Distance(transform.position, player.position) > stopDistance)
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-            }
-
-
-            if (Time.time >= attackTime)
-            {
+            }else{
+                 if (Time.time >= attackTime){
                 attackTime = Time.time + timeBetweenAttacks;
                 anim.SetTrigger("attack");
+                }
             }
-
-
         }
     }
 
